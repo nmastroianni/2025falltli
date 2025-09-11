@@ -1,6 +1,7 @@
 import data from '@/lib/data.json'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import Link from 'next/link'
+import { Presentation } from 'lucide-react'
 export default function Home() {
   return (
     <div>
@@ -13,10 +14,11 @@ export default function Home() {
                 href={`/${session.id}`}
                 aria-labelledby={`${session.id}`}
               >
-                <Card className="bg-neutral-800 min-w-[300px]">
+                <Card className="bg-neutral-800 min-w-[320px] h-full hover:shadow-lg hover:bg-neutral-900 shadow-purple-800 transition-colors ease-in-out duration-300">
                   <CardHeader>
+                    <Presentation className="mx-auto" />
                     <CardTitle
-                      className="text-center"
+                      className="text-center leading-6 font-semibold"
                       id={`session-${session.id}`}
                     >
                       {session.SessionTitle}

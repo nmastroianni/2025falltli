@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import { HomeIcon } from 'lucide-react'
+import Link from 'next/link'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,6 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="p-4 lg:p-6 shadow-sm shadow-neutral-700 mb-4 lg:mb-8">
+          <Link href="/">
+            <HomeIcon className="size-8" />
+            <span className="sr-only">Go Home</span>
+          </Link>
+        </header>
         <main id="main-content">{children}</main>
       </body>
     </html>

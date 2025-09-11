@@ -11,6 +11,12 @@ import { Card, CardHeader, CardContent, CardTitle } from '@/components/ui/card'
 import ProgramChart from '@/components/ProgramChart'
 import DeepThinkingChart from '@/components/DeepThinkingChart'
 import BeneficialChart from '@/components/BeneficialChart'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
   const { id } = await params
@@ -21,6 +27,18 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
   const deepThinking = countResponses(session, agreementsToCount, 'Question 4')
   const beneficial = countResponses(session, agreementsToCount, 'Question 5')
   const goals = countResponses(session, agreementsToCount, 'Question 7')
+  const sessionFeedback = session.Feedback.filter(
+    (item) => item['Question 6']
+  ).map((item) => item['Question 6'])
+  const delivery = session.Feedback.filter((item) => item['Question 8']).map(
+    (item) => item['Question 8']
+  )
+  const improved = session.Feedback.filter((item) => item['Question 9']).map(
+    (item) => item['Question 9']
+  )
+  const topics = session.Feedback.filter((item) => item['Question 10']).map(
+    (item) => item['Question 10']
+  )
   return (
     <div className="p-4 lg:p-8">
       <h1 className="text-center text-3xl font-black py-4 lg:py-8">
@@ -76,6 +94,75 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
             <BeneficialChart data={goals} />
           </CardContent>
         </Card>
+      </div>
+      <hr />
+      <div className="max-w-3xl mx-auto">
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>
+              <h2 className="font-bold text-center text-2xl">
+                Session Feedback
+              </h2>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc text-xl font-thin">
+                {sessionFeedback.map((item, i) => (
+                  <li key={item + i} className="ml-8">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-2">
+            <AccordionTrigger>
+              <h2 className="font-bold text-center text-2xl">
+                How will it affect my classroom?
+              </h2>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc text-xl font-thin">
+                {delivery.map((item, i) => (
+                  <li key={item + i + 1} className="ml-8">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>
+              <h2 className="font-bold text-center text-2xl">
+                How can TLI be improved?
+              </h2>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc text-xl font-thin">
+                {improved.map((item, i) => (
+                  <li key={item + i + 2} className="ml-8">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-4">
+            <AccordionTrigger>
+              <h2 className="font-bold text-center text-2xl">
+                Future TLI topic ideas
+              </h2>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="list-disc text-xl font-thin">
+                {topics.map((item, i) => (
+                  <li key={item + i + 3} className="ml-8">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   )
