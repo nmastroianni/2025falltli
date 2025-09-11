@@ -29,10 +29,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="p-4 lg:p-6 shadow-sm shadow-neutral-700 mb-4 lg:mb-8">
-          <Link href="/">
-            <HomeIcon className="size-8" />
+        <header className="p-4 lg:p-6 shadow-sm shadow-neutral-700 mb-4 lg:mb-8 sticky top-0 z-50 backdrop-blur-lg bg-neutral-950/80 flex justify-center">
+          <Link href="/" className="absolute left-4 top-6 lg:left-8 lg:top-8">
+            <HomeIcon className="size-4 lg:size-6" />
             <span className="sr-only">Go Home</span>
+          </Link>
+          <Link href="/">
+            <h1 className="text-xs w-64 lg:text-3xl lg:w-full text-center">
+              2025 Fall Teaching & Learning Institute Survey Results
+            </h1>
           </Link>
         </header>
         <main id="main-content">{children}</main>

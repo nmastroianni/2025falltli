@@ -105,7 +105,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
               </h2>
             </AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc text-xl font-thin">
+              <ul className="list-disc text-xl font-light">
                 {sessionFeedback.map((item, i) => (
                   <li key={item + i} className="ml-8">
                     {item}
@@ -121,7 +121,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
               </h2>
             </AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc text-xl font-thin">
+              <ul className="list-disc text-xl font-light">
                 {delivery.map((item, i) => (
                   <li key={item + i + 1} className="ml-8">
                     {item}
@@ -137,7 +137,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
               </h2>
             </AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc text-xl font-thin">
+              <ul className="list-disc text-xl font-light">
                 {improved.map((item, i) => (
                   <li key={item + i + 2} className="ml-8">
                     {item}
@@ -153,7 +153,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
               </h2>
             </AccordionTrigger>
             <AccordionContent>
-              <ul className="list-disc text-xl font-thin">
+              <ul className="list-disc text-xl font-light">
                 {topics.map((item, i) => (
                   <li key={item + i + 3} className="ml-8">
                     {item}

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Presentation } from 'lucide-react'
 export default function Home() {
   return (
-    <div>
+    <div className="p-4 lg:p-0">
       <div className="max-w-5xl mx-auto flex flex-wrap gap-4 lg:gap-8">
         {data.length > 0 &&
           data.map((session) => {
@@ -13,8 +13,9 @@ export default function Home() {
                 key={session.id}
                 href={`/${session.id}`}
                 aria-labelledby={`${session.id}`}
+                className="w-full lg:w-80"
               >
-                <Card className="bg-neutral-800 min-w-[320px] h-full hover:shadow-lg hover:bg-neutral-900 shadow-purple-800 transition-colors ease-in-out duration-300">
+                <Card className="bg-neutral-800 h-full hover:shadow-lg shadow-pink-950 hover:bg-neutral-900 hover:shadow-purple-800 transition ease-in-out duration-300">
                   <CardHeader>
                     <Presentation className="mx-auto" />
                     <CardTitle
