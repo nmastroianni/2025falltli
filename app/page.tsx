@@ -15,7 +15,7 @@ export default function Home() {
                 aria-labelledby={`${session.id}`}
                 className="w-full lg:w-80"
               >
-                <Card className="bg-neutral-800 h-full hover:shadow-lg shadow-pink-950 hover:bg-neutral-900 hover:shadow-purple-800 transition ease-in-out duration-300">
+                <Card className="bg-neutral-900 h-full hover:shadow-lg shadow-purple-500 hover:bg-neutral-800 hover:shadow-purple-800 transition ease-in-out duration-300">
                   <CardHeader>
                     <Presentation className="mx-auto" />
                     <CardTitle
