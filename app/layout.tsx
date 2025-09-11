@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: '2025 Fall Teaching and Learning Institute Survey Results',
   description:
     'This is the feedback we received from our 2025 Fall Teaching and Learning Institute.',
+  openGraph: {
+    images: [`${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-image.png`],
+  },
 }
 
 export default function RootLayout({
