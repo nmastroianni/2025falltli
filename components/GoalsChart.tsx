@@ -2,6 +2,8 @@
 import {
   ChartConfig,
   ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from '@/components/ui/chart'
@@ -57,6 +59,7 @@ const GoalsChart = ({ data }: GoalsChartProps) => {
         <PieChart>
           <ChartTooltip content={<ChartTooltipContent hideLabel />} />
           <Pie data={dataWithColor} dataKey="total" label nameKey="title" />
+          <ChartLegend content={<ChartLegendContent nameKey="title" />} />
         </PieChart>
       </ChartContainer>
     </div>

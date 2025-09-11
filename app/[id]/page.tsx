@@ -100,7 +100,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              <h2 className="font-bold text-center text-2xl">
+              <h2 className="font-bold text-center lg:text-2xl">
                 Session Feedback
               </h2>
             </AccordionTrigger>
@@ -116,7 +116,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              <h2 className="font-bold text-center text-2xl">
+              <h2 className="font-bold text-center lg:text-2xl">
                 How will it affect my classroom?
               </h2>
             </AccordionTrigger>
@@ -132,7 +132,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              <h2 className="font-bold text-center text-2xl">
+              <h2 className="font-bold text-center lg:text-2xl">
                 How can TLI be improved?
               </h2>
             </AccordionTrigger>
@@ -148,7 +148,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              <h2 className="font-bold text-center text-2xl">
+              <h2 className="font-bold text-center lg:text-2xl">
                 Future TLI topic ideas
               </h2>
             </AccordionTrigger>
