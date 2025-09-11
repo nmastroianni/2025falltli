@@ -41,9 +41,9 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
   )
   return (
     <div className="p-4 lg:p-8">
-      <h1 className="text-center text-3xl font-black py-4 lg:py-8">
+      <h2 className="text-center text-3xl font-black py-4 lg:py-8">
         {session.SessionTitle}
-      </h1>
+      </h2>
       <p className="text-center font-light text-xs">
         {session.Feedback.length} Ratings Submitted
       </p>
