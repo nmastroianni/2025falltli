@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import { HomeIcon } from 'lucide-react'
+import { HomeIcon, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,18 +34,34 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="p-4 lg:p-6 shadow-sm shadow-neutral-700 mb-4 lg:mb-8 sticky top-0 z-50 backdrop-blur-lg bg-neutral-950/80 flex justify-center">
-          <Link href="/" className="absolute left-4 top-6 lg:left-8 lg:top-8">
+        <header className="p-4 lg:p-6 shadow-sm shadow-purple-400/50 mb-4 lg:mb-8 sticky top-0 z-50 backdrop-blur-lg bg-neutral-950/65 flex justify-between items-center">
+          <Link href="/" className="flex-1">
             <HomeIcon className="size-4 lg:size-6" />
             <span className="sr-only">Go Home</span>
           </Link>
-          <Link href="/">
-            <h1 className="text-xs w-64 lg:text-3xl lg:w-full text-center">
+          <Link href="/" className="flex-1">
+            <h1 className="text-xs md:text-lg w-64 lg:text-2xl lg:w-full text-center">
               2025 Fall Teaching & Learning Institute Survey Results
             </h1>
           </Link>
+          <div className="flex-1 flex justify-end">
+            <Button asChild className="hidden md:inline">
+              <Link href="https://forms.office.com/r/EEMnVePsfs" className="">
+                <Lightbulb className="size-4 inline mr-2 mb-1" />
+                Submit a Proposal
+              </Link>
+            </Button>
+          </div>
         </header>
         <main id="main-content">{children}</main>
+        <Button
+          asChild
+          className="fixed bottom-8 right-8 md:hidden rounded-full w-12 h-12"
+        >
+          <Link href="https://forms.office.com/r/EEMnVePsfs">
+            <Lightbulb className="size-6" />
+          </Link>
+        </Button>
       </body>
     </html>
   )
