@@ -60,6 +60,7 @@ export default function RootLayout({
         >
           <Link href="https://forms.office.com/r/EEMnVePsfs">
             <Lightbulb className="size-6" />
+            <span className="sr-only">Submit a proposal</span>
           </Link>
         </Button>
       </body>
