@@ -17,6 +17,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { Metadata } from 'next'
+
+type Params = {
+  id: number
+}
 
 const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
   const { id } = await params
@@ -166,6 +171,16 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
       </div>
     </div>
   )
+}
+
+export async function generateMetadata(props: {
+  params: Promise<Params>
+}): Promise<Metadata> {
+  const params = await props.params
+  const session = data[params.id]
+  return {
+    title: `${session.SessionTitle}`,
+  }
 }
 
 export default Session
