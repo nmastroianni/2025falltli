@@ -53,7 +53,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
         {session.Feedback.length} Ratings Submitted
       </p>
       <div className="flex flex-wrap justify-center gap-4 lg:gap-8 p-4 lg:p-8">
-        <Card className="min-w-[600px]">
+        <Card className="lg:min-w-[600px]">
           <CardHeader>
             <CardTitle className="text-center">Roles present</CardTitle>
           </CardHeader>
@@ -61,7 +61,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
             <RoleChart data={roles} />
           </CardContent>
         </Card>
-        <Card className="min-w-[600px]">
+        <Card className="lg:min-w-[600px]">
           <CardHeader>
             <CardTitle className="text-center">When I attended...</CardTitle>
           </CardHeader>
@@ -69,7 +69,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
             <ProgramChart data={programs} />
           </CardContent>
         </Card>
-        <Card className="min-w-[600px]">
+        <Card className="lg:min-w-[600px]">
           <CardHeader>
             <CardTitle className="text-center">
               This session made me think deeply...
@@ -79,7 +79,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
             <DeepThinkingChart data={deepThinking} />
           </CardContent>
         </Card>
-        <Card className="min-w-[600px]">
+        <Card className="lg:min-w-[600px]">
           <CardHeader>
             <CardTitle className="text-center">
               I felt this session was beneficial...
@@ -89,7 +89,7 @@ const Session = async ({ params }: { params: Promise<{ id: number }> }) => {
             <BeneficialChart data={beneficial} />
           </CardContent>
         </Card>
-        <Card className="min-w-[600px]">
+        <Card className="lg:min-w-[600px]">
           <CardHeader>
             <CardTitle className="text-center">
               I felt this session was aligned with my goals...
